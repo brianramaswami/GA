@@ -155,7 +155,8 @@ public abstract class GA extends Object
         while (iterationCt < GA_numIterations)
             {
                 Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
-                GA_pop = mate.Crossover(GA_pop,numPairs);
+                //GA_pop = mate.Crossover(GA_pop,numPairs);
+		GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
                 Mutate();
                 
                 ComputeCost();
