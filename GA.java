@@ -198,8 +198,35 @@ protected void EvolveTDDP()
                     break;
                 ++iterationCt;
             }
-            // maybe we return values to print here??
     }
+ /*   
+protected void EvolveTSP()
+    {
+        int iterationCt = 0;
+        Pair pairs      = new Pair(GA_pop);
+        int numPairs    = pairs.SimplePair();
+        boolean found   = false;
 
+        while (iterationCt < GA_numIterations)
+            {
+                Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
+                // GA_pop = mate.Crossover(GA_pop,numPairs);
+		        GA_pop = mate.TournamentTSP(GA_pop,numPairs);
+                Mutate();
+                
+                ComputeCost();
+                
+                SortPop();
+                
+                Chromosome chrome = GA_pop.get(0); //get the best guess
+                
+                DisplayBest(iterationCt); //print it
+
+                if (chrome.Equals(GA_target)) //if it's equal to the target, stop
+                    break;
+                ++iterationCt;
+            }
+    }
+ */   
 }
 
