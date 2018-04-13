@@ -7,6 +7,8 @@
             .1   = the mutation factor
             1000 = the number of generations; stop after this number of generations if the word has 
                     not been guessed.
+                    ALSO ADDING POP SIZE
+                    ALSO ADDING MUTATION RATE
 */
 
 import java.lang.*;
@@ -20,6 +22,8 @@ public static void main(String args[])
         int     numGenes    = Integer.parseInt(args[3]);
         double  mutFact     = Double.parseDouble(args[4]);
         int     numIters    = Integer.parseInt(args[5]);
+        // int     popSize     =  Integer.parseInt(args[6]);
+        // double  mutRate     =  Integer.parseInt(args[7]);
         GetParams GP        = new GetParams(args[0],numChromesI,numChromes,numGenes,mutFact,numIters);
         //args[0] is the name of the parameter file
     }

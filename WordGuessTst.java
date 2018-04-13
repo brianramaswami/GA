@@ -15,13 +15,16 @@ public class WordGuessTst
         WordGuess WG1 = new WordGuess(args[0],args[1]);
 
         System.out.println();
-	System.out.println("contents of paramater file");
+	System.out.println("CONTENTS OF PARAMATER FILE");
         WG1.DisplayParams(); //Uncomment to display the contents of the parameter file
         System.out.println("pop before evolution");
-	WG1.DisplayPop(); //Uncomment to display the population before evolution
-        WG1.Evolve();
-	System.out.println("pop after evolution");
-        WG1.DisplayPop(); //Uncomment to display the population after evolution
+	// WG1.DisplayPop(); //Uncomment to display the population before evolution
+        WG1.EvolveTDSP();
+	// System.out.println("pop after evolution");
+        // WG1.DisplayPop(); //Uncomment to display the population after evolution
+        System.out.println();
+        WordGuess WG2 = new WordGuess(args[0],args[1]);
+        WG2.EvolveTDDP();
         System.out.println();
     }
 }

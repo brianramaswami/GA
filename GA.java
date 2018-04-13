@@ -145,7 +145,7 @@ public abstract class GA extends Object
  protected abstract void ComputeCost();
 
  //In earlier versions (as on ada) this is in WordGuess and is an abstract method here 
- protected void Evolve()
+ protected void EvolveTDSP()
     {
         int iterationCt = 0;
         Pair pairs      = new Pair(GA_pop);
@@ -155,8 +155,8 @@ public abstract class GA extends Object
         while (iterationCt < GA_numIterations)
             {
                 Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
-                //GA_pop = mate.Crossover(GA_pop,numPairs);
-		GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
+                GA_pop = mate.Crossover(GA_pop,numPairs);
+		//GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
                 Mutate();
                 
                 ComputeCost();
@@ -171,6 +171,34 @@ public abstract class GA extends Object
                     break;
                 ++iterationCt;
             }
+    }
+protected void EvolveTDDP()
+    {
+        int iterationCt = 0;
+        Pair pairs      = new Pair(GA_pop);
+        int numPairs    = pairs.SimplePair();
+        boolean found   = false;
+
+        while (iterationCt < GA_numIterations)
+            {
+                Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
+                // GA_pop = mate.Crossover(GA_pop,numPairs);
+		        GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
+                Mutate();
+                
+                ComputeCost();
+                
+                SortPop();
+                
+                Chromosome chrome = GA_pop.get(0); //get the best guess
+                
+                DisplayBest(iterationCt); //print it
+
+                if (chrome.Equals(GA_target)) //if it's equal to the target, stop
+                    break;
+                ++iterationCt;
+            }
+            // maybe we return values to print here??
     }
 
 }
