@@ -81,7 +81,7 @@ public class Mate
                     MT_child2.SetGene(i,MT_mother.GetGene(i));
                 }
 
-	    //center side
+	        //center side
             for (int i = crossPoint1; i < crossPoint2; i++)
                 {
                     MT_child1.SetGene(i, MT_mother.GetGene(i));
@@ -107,37 +107,43 @@ public class Mate
         return population;
     }
 
-/*
- //Simple Top-Down Tournament Pairing
- public ArrayList<Chromosome> TournamentTSP(ArrayList<Chromosome> population, int numPairs)
-    {
-        Random rnum1     = new Random();
-	    Random rnum2    = new Random();
-        int crossPoint1  = rnum1.nextInt(MT_numGenes);
-        int crossPoint2  = rnum2.nextInt(MT_numGenes);
 
-        System.out.println(population);
-        return population;
- 
-        // while (numPairs < 16){
-        //     // Do Twice:
-        //         // randomly select subset of population
-        // Random rnum3 = new Random();
-        // int n = rnum3.nextInt(crossPoint2)+ crossPoint1;
-        }             
-    }
-
-    //         for(int i = crossPoint1; i < crossPoint2; i++){
+//  //Simple Top-Down Tournament Pairing
+//  public ArrayList<Chromosome> TournamentTSP(ArrayList<Chromosome> population, int numPairs)
+//     {
+//         for(int j = 0; j < numPairs; j++{
+//             Random rnum1     = new Random();
+//             Random rnum2    = new Random();
+//             int crossPoint1  = rnum1.nextInt(MT_numGenes);
+//             int crossPoint2  = rnum2.nextInt(MT_numGenes);
+//             Random rnum3 = new Random();
+//             int l = rnum3.nextInt(crossPoint2)+ crossPoint1;
+            
+//             Random rnum4 = new Random();
+//             Random rnum5 = new Random();
+//             int crossPoint3  = rnum1.nextInt(MT_numGenes);
+//             int crossPoint4  = rnum2.nextInt(MT_numGenes);
+//             Random rnum6 = new Random();
+//             int h = rnum6.nextInt(crossPoint4)+ crossPoint3;
 
 
-        //         }
-               
-        //         // select 1 parent at random from subset
-        //         // add parents to set of mating pairs
-        // }
-*/
-      
-} 
+//             int x = 0;
+//             while(x < 2){
+//                 MT_child1.SetGene(i, MT_mother.GetGene(l));
+//                 MT_child2.SetGene(i, MT_father.GetGene(h));
+
+//                 population.add(MT_posChild1,MT_child1);
+//                 x = x + 1;
+//             }
+//             // MT_posChild1    = MT_posChild1 + 2;
+//             // MT_posChild2    = MT_posChild2 + 2;
+//             // MT_posFather    = MT_posFather + 2;
+//             // MT_posMother    = MT_posMother + 2;
+             
+//         }
+     
+//     } 
+}
  
  // {
     //     Population tournament = new Population(tournamentSize, false);

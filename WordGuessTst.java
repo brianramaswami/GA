@@ -29,13 +29,6 @@ public class WordGuessTst
         WG2.EvolveTDDP();
         System.out.println();
         // WG1.EvolveTSP();
-
-        // String [][] Table = new String[5][5]; 
-        //;
-        // [["TYPE",,,],["top-down single point",,,],["top-down double point",,,],["tournament single point",,,],["tournament and double point",,,]];
-        // for row in Table:
-        //         for elem in row:
-        //                 print elem;
     }
 }
 

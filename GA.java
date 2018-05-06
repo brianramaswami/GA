@@ -156,7 +156,7 @@ public abstract class GA extends Object
             {
                 Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
                 GA_pop = mate.Crossover(GA_pop,numPairs);
-		//GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
+		        //GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
                 Mutate();
                 
                 ComputeCost();
@@ -182,7 +182,6 @@ protected void EvolveTDDP()
         while (iterationCt < GA_numIterations)
             {
                 Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
-                // GA_pop = mate.Crossover(GA_pop,numPairs);
 		        GA_pop = mate.TDDPCrossover(GA_pop,numPairs);
                 Mutate();
                 
@@ -199,34 +198,33 @@ protected void EvolveTDDP()
                 ++iterationCt;
             }
     }
- /*   
-protected void EvolveTSP()
-    {
-        int iterationCt = 0;
-        Pair pairs      = new Pair(GA_pop);
-        int numPairs    = pairs.SimplePair();
-        boolean found   = false;
+    
+// protected void EvolveTSP()
+//     {
+//         int iterationCt = 0;
+//         Pair pairs      = new Pair(GA_pop);
+//         int numPairs    = pairs.SimplePair();
+//         boolean found   = false;
 
-        while (iterationCt < GA_numIterations)
-            {
-                Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
-                // GA_pop = mate.Crossover(GA_pop,numPairs);
-		        GA_pop = mate.TournamentTSP(GA_pop,numPairs);
-                Mutate();
+//         while (iterationCt < GA_numIterations)
+//             {
+//                 Mate mate = new Mate(GA_pop,GA_numGenes,GA_numChromes);
+// 		        GA_pop = mate.TournamentTSP(GA_pop,numPairs);
+//                 Mutate();
                 
-                ComputeCost();
+//                 ComputeCost();
                 
-                SortPop();
+//                 SortPop();
                 
-                Chromosome chrome = GA_pop.get(0); //get the best guess
+//                 Chromosome chrome = GA_pop.get(0); //get the best guess
                 
-                DisplayBest(iterationCt); //print it
+//                 DisplayBest(iterationCt); //print it
 
-                if (chrome.Equals(GA_target)) //if it's equal to the target, stop
-                    break;
-                ++iterationCt;
-            }
-    }
- */   
+//                 if (chrome.Equals(GA_target)) //if it's equal to the target, stop
+//                     break;
+//                 ++iterationCt;
+//             }
+//     }
+    
 }
 
