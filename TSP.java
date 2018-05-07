@@ -1,10 +1,14 @@
 import java.io.*;
 import java.util.*;
 import java.lang.*;
-import java.util.Scanner;	
+import java.util.Scanner;
+
+String[] tableName = ['a','b','c','d','e','f','g','h'];
 
 public class TSP
 {
+
+	// int[] seg = ["A","B"];
 
 	public static void main(String args [] ) throws IOException
 	{ 
@@ -12,6 +16,10 @@ public class TSP
 		
 		int[][] data = readFiles("Data.txt");
 		printData(data);
+
+		computeSegment(data);
+
+
 		WordGuess WG1 = new WordGuess(args[0],args[1]);
 
         
@@ -31,19 +39,7 @@ public class TSP
         System.out.println();
         // WG1.EvolveTSP();
 
-        // String [][] Table = new String[5][5]; 
-        //;
-        // [["TYPE",,,],["top-down single point",,,],["top-down double point",,,],["tournament single point",,,],["tournament and double point",,,]];
-        // for row in Table:
-        //         for elem in row:
-        //                 print elem;	
-
 	}
-
-
-
-
-
 
 
 	public static void printData(int[][] data){
@@ -51,6 +47,14 @@ public class TSP
 			System.out.println(Arrays.toString(row));
 		}
 
+	}
+
+	public static int computeSegment(int[][] data){
+		int [] y = data[2];
+		int z = y[1];
+		System.out.println(z);
+		return z;
+		
 	}
 
 	public static int [][] readFiles(String file)  throws IOException

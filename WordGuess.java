@@ -44,7 +44,8 @@ public class WordGuess extends GA
             int cost = 0;
             Chromosome chrom = GA_pop.remove(i);
             for (int j = 0; j < GA_numGenes; j++)
-                if (chrom.GetGene(j) != WG_target.charAt(j))
+            // i am going to modify from this ()
+                if (chrom.GetGene(j) != WG_target.charAt(j)) 
                     cost++;
             chrom.SetCost(cost);
             GA_pop.add(i,chrom);
