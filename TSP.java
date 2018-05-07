@@ -49,13 +49,26 @@ public class TSP
 
 	}
 
-	public static int computeSegment(int[][] data){
-		int [] y = data[2];
-		int z = y[1];
-		System.out.println(z);
-		return z;
-		
+	public static int computeSegment(int[][] data, int[] seg){
+		int [] y = data[seg[0]];
+		int z = y[seg[1]];
+		return z;	
 	}
+
+	public static int computeDistance(int[] path){
+		i=0;
+                j=1;
+		total = 0;
+		while (j < 8) {
+			seg = [ path[i], path[j] ];
+             		total = total + computeSegment(int[][] data, seg);
+			i = j;
+                        j= i + 2;
+		}
+		return total;
+	}
+
+
 
 	public static int [][] readFiles(String file)  throws IOException
 	{
